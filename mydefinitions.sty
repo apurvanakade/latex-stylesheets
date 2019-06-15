@@ -1,0 +1,93 @@
+\ProvidesPackage{definitions}
+
+%simple operators which can be pretty useful
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\pr}[2][\:]{\frac{\partial #1}{\partial #2}}
+\newcommand{\innerp}[2]{\langle #1, #2 \rangle}
+\newcommand*\conj[1]{\overline{#1}}
+\newcommand*\norm[2][]{\left\lVert #2 \right\rVert_{#1}}
+\newcommand*\abs[1]{\left\lvert #1 \right\rvert}
+\newcommand{\cat}[1]{\mathsf{#1}}
+
+%How does latex not have these?
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Maps}{Maps}
+\DeclareMathOperator{\maps}{maps}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator*{\holim}{holim}
+\DeclareMathOperator*{\hocolim}{hocolim}
+\DeclareMathOperator*{\hofib}{hofib}
+\DeclareMathOperator*{\hocofib}{hocofib}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\spn}{Span}
+\DeclareMathOperator{\mat}{Mat}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\tr}{tr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+\newenvironment{definetable}
+  {\begin{longtable}{p{0.2\textwidth} | p{0.8\textwidth}}}
+  {\end{longtable}}
+
+  \theoremstyle{definition}
+  \newcounter{question}[section]
+    \numberwithin{question}{section}
+  \newtheorem{q}[question]{Q.}
+  \newtheorem*{q*}{Q}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[breakable]{tcolorbox}
+\definecolor{light-gray}{gray}{0.99}
+% box for questions
+\newenvironment{qbox}{
+  \begin{tcolorbox}[breakable,colback=light-gray,arc=0pt,outer arc=0pt,boxrule=0.5pt]
+  \begin{q}
+  }{
+  \end{q}
+  \end{tcolorbox}
+  }
+
+% adding hints that are upside down
+\RequirePackage{tablefootnote} %adds the hint at the end of page instead of minipage
+\AfterEndEnvironment{tcolorbox}{
+ \tfn@tablefootnoteprintout %buffer that collects all the bookmarks
+ \gdef\tfn@fnt{0}
+}
+\newcommand{\hint}[1]{
+  \tablefootnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}
+  }
+\newcommand{\texthint}[1]{
+  \footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}
+  }
+\RequirePackage{perpage}
+\MakePerPage{footnote}

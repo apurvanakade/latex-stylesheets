@@ -1,0 +1,25 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamble}
+
+\RequirePackage{amsmath,amssymb,array,amsthm,stmaryrd}
+  \numberwithin{equation}{section}
+
+\RequirePackage{mycite}
+\RequirePackage{mytikz}
+\RequirePackage{mydefinitions}
+\RequirePackage{myfonts}
+\RequirePackage{myfigure}
+
+\RequirePackage{hyperref}
+  \definecolor{link}{rgb}{0,0,0.5}
+  \hypersetup{
+     unicode,
+     colorlinks=true,
+     citecolor=link,
+     filecolor=link,
+     linkcolor=link,
+     urlcolor=link
+  }
+\RequirePackage{multicol}
+\RequirePackage{longtable}
+\RequirePackage{enumitem}
