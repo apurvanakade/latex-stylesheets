@@ -1,6 +1,12 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mycite}
+
 \RequirePackage{cite}
-% \RequirePackage[nottoc]{tocbibind} %this clashes with asmart documentclass
+\@ifclassloaded{article}%
+  {\RequirePackage[nottoc]{tocbibind}}%%this clashes with asmart documentclass
+  {}
+
 \AtEndDocument{
   \bibliographystyle{alpha}
-  \bibliography{references.bib}
+  \bibliography{/Users/apurv/Library/texmf/tex/latex/local/references.bib}
 }
