@@ -32,10 +32,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,15 +45,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \theoremstyle{definition}
-\newtheorem{remark}{Remark}[section]
-\newtheorem{ex}{Example}[section]
-\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{ex}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
 \newenvironment{definetable}
   {\begin{longtable}{p{0.2\textwidth} | p{0.8\textwidth}}}
   {\end{longtable}}
 
   \theoremstyle{definition}
-  \newcounter{question}[section]
-    \numberwithin{question}{section}
+  \newcounter{question}%[section]
+    % \numberwithin{question}{section}
   \newtheorem{q}[question]{Q.}
   \newtheorem*{q*}{Q}
