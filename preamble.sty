@@ -4,6 +4,9 @@
 \RequirePackage{amsmath,amssymb,array,amsthm,stmaryrd}
   \numberwithin{equation}{section}
 \RequirePackage{microtype}
+  \overfullrule=2cm %display overfull hboxes
+  \relpenalty=10000 %prevent equation breaking across lines at =
+  \binoppenalty=10000 % prevent equation breaking across lines at binary operator
 
 \RequirePackage{mydefinitions}
 \RequirePackage{myfonts}
