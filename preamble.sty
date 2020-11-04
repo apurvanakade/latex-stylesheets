@@ -31,8 +31,13 @@
 \def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
 \makeatother
 
-% Show overfull boxes
-\overfullrule=2cm
+\DeclareOption{showoverfullhbox}{
+  % Show overfull boxes
+  \overfullrule=2cm
+}
+\ProcessOptions\relax
+
+
 % Prevent inline equations from breaking across lines
 \relpenalty=10000
 \binoppenalty=10000
