@@ -1,1 +1,5 @@
-Add this folder to $HOME/Library/texmf/tex/latex/local
+Add this folder to `../texmf/tex/latex/local`
+
+where `../texmf` is the output of the command 
+
+`kpsewhich -var-value=TEXMFHOME`
